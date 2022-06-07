@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=#, initial-scale=1.0">
+    <title>Periodic Table</title>
+    <style>
+        table {
+            border-spacing: 0;
+        }
+
+        td {
+            color: white;
+            background-color: rgb(131, 0, 0);
+            text-align: center;
+            border: 1px solid;
+            box-sizing: border-box;
+            width: 50px;
+            height: 50px;
+        }
+
+        .emptyLine td,
+        .emptyCell {
+            background-color: #fff;
+        }
+
+        .emptyLine .fullCell {
+            background-color:  rgb(131, 0, 0);
+        }
+
+        .f-block td {
+            border-top-width: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="emptyLine">
+            <td class="fullCell">H</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="fullCell">He</td>
+        </tr>
+        <tr class="emptyLine">
+            <td class="fullCell">Li</td>
+            <td class="fullCell">Be</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="fullCell">B</td>
+            <td class="fullCell">C</td>
+            <td class="fullCell">N</td>
+            <td class="fullCell">O</td>
+            <td class="fullCell">F</td>
+            <td class="fullCell">Ne</td>
+        </tr>
+        <tr class="emptyLine">
+            <td class="fullCell">Na</td>
+            <td class="fullCell">Mg</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="fullCell">Al</td>
+            <td class="fullCell">Si</td>
+            <td class="fullCell">P</td>
+            <td class="fullCell">S</td>
+            <td class="fullCell">Cl</td>
+            <td class="fullCell">Ar</td>
+        </tr>
+        <tr>
+            <td>K</td>
+            <td>Ca</td>
+            <td>Sc</td>
+            <td>Ti</td>
+            <td>V</td>
+            <td>Cr</td>
+            <td>Mn</td>
+            <td>Fe</td>
+            <td>Co</td>
+            <td>Ni</td>
+            <td>Cu</td>
+            <td>Zn</td>
+            <td>Ga</td>
+            <td>Ge</td>
+            <td>As</td>
+            <td>Se</td>
+            <td>Br</td>
+            <td>Kr</td>
+        </tr>
+        <tr>
+            <td>Rb</td>
+            <td>Sr</td>
+            <td>Y</td>
+            <td>Zr</td>
+            <td>Nb</td>
+            <td>Mo</td>
+            <td>Tc</td>
+            <td>Ru</td>
+            <td>Rh</td>
+            <td>Pd</td>
+            <td>Ag</td>
+            <td>Cd</td>
+            <td>In</td>
+            <td>Sn</td>
+            <td>Sb</td>
+            <td>Te</td>
+            <td>I</td>
+            <td>Xe</td>
+        </tr>
+        <tr>
+            <td>Cs</td>
+            <td>Ba</td>
+            <td>La</td>
+            <td>Hf</td>
+            <td>Ta</td>
+            <td>W</td>
+            <td>Re</td>
+            <td>Os</td>
+            <td>Ir</td>
+            <td>Pt</td>
+            <td>Au</td>
+            <td>Hg</td>
+            <td>Tl</td>
+            <td>Pb</td>
+            <td>Bi</td>
+            <td>Po</td>
+            <td>At</td>
+            <td>Rn</td>
+        </tr>
+        <tr>
+            <td>Fr</td>
+            <td>Ra</td>
+            <td>Ac</td>
+            <td>Rf</td>
+            <td>Db</td>
+            <td>Sg</td>
+            <td>Bh</td>
+            <td>Hs</td>
+            <td>Mt</td>
+            <td>Ds</td>
+            <td>Rg</td>
+            <td>Cn</td>
+            <td>Nh</td>
+            <td>Fl</td>
+            <td>Mc</td>
+            <td>Lc</td>
+            <td>Ts</td>
+            <td>Og</td>
+        </tr>
+        <tr class="f-block">
+            <td class="emptyCell"></td>
+            <td class="emptyCell"></td>
+            <td class="emptyCell"></td>
+            <td>Ce</td>
+            <td>Pr</td>
+            <td>Nd</td>
+            <td>Pm</td>
+            <td>Sm</td>
+            <td>Eu</td>
+            <td>Gd</td>
+            <td>Tb</td>
+            <td>Dy</td>
+            <td>Ho</td>
+            <td>Er</td>
+            <td>Tm</td>
+            <td>Yb</td>
+            <td>Lu</td>
+            <td class="emptyCell"></td>
+        </tr>
+        <tr>
+            <td class="emptyCell"></td>
+            <td class="emptyCell"></td>
+            <td class="emptyCell"></td>
+            <td>Th</td>
+            <td>Pa</td>
+            <td>U</td>
+            <td>Np</td>
+            <td>Pu</td>
+            <td>Am</td>
+            <td>Cm</td>
+            <td>Bk</td>
+            <td>Cf</td>
+            <td>Es</td>
+            <td>Fm</td>
+            <td>Md</td>
+            <td>No</td>
+            <td>Lr</td>
+            <td class="emptyCell"></td>
+        </tr>
+    </table>
+</body>
+</html>
