@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables_v2</title>
+    <style>
+        table {
+            border-spacing: 0;
+            border: 1px solid black;
+        }
+
+        td {
+            border-right: 1px solid rgb(177, 177, 177);
+            border-bottom: 1px solid rgb(177, 177, 177);
+        }
+
+        .last {
+            border-right: none;
+        }
+
+        .bottomRow td {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Table border addition with HTML attribute border="1" -->
+    <!-- {
+        border-width: 2px;
+        border-style: dashed;
+        border-color: red:
+    } -->
+    <!-- Shorthand Žymėjimas, jei vienoje eilutėje -->
+    <table>
+        <!-- Table Row -->
+        <tr>
+            <!-- Stulpelio Elementas -->
+            <td>1</td>
+            <td>4</td>
+            <td>5</td>
+            <td>12</td>
+            <td class="last">18</td>
+        </tr>
+        <tr>
+            <!-- Stulpelio Elementas -->
+            <td>1</td>
+            <td>4</td>
+            <td>5</td>
+            <td>12</td>
+            <td class="last">18</td>
+        </tr>
+        <tr class="bottomRow">
+            <!-- Stulpelio Elementas -->
+            <td>1</td>
+            <td>4</td>
+            <td>5</td>
+            <td>12</td>
+            <td class="last">18</td>
+        </tr>
+    </table>
+</body>
+</html>
