@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pozicijos</title>
+    <style>
+        body {
+            margin: 0;
+            background: black;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        .parent {
+            position: relative;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+        }
+        .box1 {
+            background: red;
+            left: 50px;
+            top: 0;
+            z-index: 2;
+        }
+        .box2 {
+            background: purple;
+            left: 500px;
+            top: 0;
+            z-index: 0;
+        }
+        .box3 {
+            background: pink;
+            left: 150px;
+            top: 0;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Realityvus elementas</h1>
+    <div class="parent">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+    </div>
+</body>
+</html>

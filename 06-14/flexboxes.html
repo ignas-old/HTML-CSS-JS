@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexboxes</title>
+    <style>
+        .margin {
+            margin-bottom: 20px;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex div {
+            background: black;
+            border: 3px solid grey;
+            color: white;
+        }
+        /* Adaptyvus pločio priskyrimas */
+        /* .flex .box1 {
+            flex: 1 0 0;  
+        }
+        .flex .box2 {
+            flex: 0 1 320px;
+        }
+        .flex .box3 {
+            flex: 0 1 0;
+        } */
+        /* Baigiasi adaptyvas pločio priskyrimas */
+        .flex .box1 {
+            width: 30%;
+        }
+        .flex .box2 {
+            width: 20%;
+        }
+        .flex .box3 {
+            width: 50%;
+        }
+        /* elementus pradeda stumti vieną nuo kito žemyn */
+        .wrap {
+            flex-wrap: wrap;
+        }
+        /* Pakeičiamas vidinių elementų atvaizdavimas ir rūšiavimo tvarka */
+        .direction {
+            /* flex-direction: column-reverse;
+            flex-direction: column;
+            flex-direction: row; */
+            flex-direction: row-reverse;
+        }
+
+        div.digitBox {
+            font-size: 24px;
+            color: red;
+            padding: 100px 50px;
+        }
+
+        .justify-content {
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <!-- Pirmas pavyzdys -->
+    <h1>Pirmas pavyzdys</h1>
+    <div class="margin flex">
+        <div class="box1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga asperiores fugiat eos? Minima similique quos fuga, tempore mollitia quasi molestiae, iure animi odio veritatis sapiente ducimus alias qui suscipit pariatur. Debitis, ab? Neque consequatur ex corrupti accusamus libero ad minus iure? Architecto illum deserunt cupiditate, assumenda aliquid in iste dignissimos asperiores repellendus id nisi doloremque similique ipsa odio ab culpa sed harum praesentium. Architecto alias, perferendis facilis beatae nihil ut, iusto quisquam officiis quod amet reprehenderit corporis eveniet voluptatem sed quam. Quidem velit perspiciatis minima, repellat maiores est, eveniet id autem impedit, qui veritatis. Quaerat excepturi explicabo rerum amet fugiat!</div>
+        <div class="box2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, culpa!</div>
+        <div class="box3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis architecto explicabo doloremque nesciunt tempora vel obcaecati autem eveniet eius ex incidunt quod, consequuntur odit minus ea cupiditate iste maiores exercitationem.</div>
+    </div>
+    <h1>Antras pavyzdys</h1>
+    <div class="margin flex wrap">
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga asperiores fugiat eos? Minima similique quos fuga, tempore mollitia quasi molestiae, iure animi odio veritatis sapiente ducimus alias qui suscipit pariatur. Debitis, ab? Neque consequatur ex corrupti accusamus libero ad minus iure? Architecto illum deserunt cupiditate, assumenda aliquid in iste dignissimos asperiores repellendus id nisi doloremque similique ipsa odio ab culpa sed harum praesentium. Architecto alias, perferendis facilis beatae nihil ut, iusto quisquam officiis quod amet reprehenderit corporis eveniet voluptatem sed quam. Quidem velit perspiciatis minima, repellat maiores est, eveniet id autem impedit, qui veritatis. Quaerat excepturi explicabo rerum amet fugiat!</div>
+        <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, culpa!</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis architecto explicabo doloremque nesciunt tempora vel obcaecati autem eveniet eius ex incidunt quod, consequuntur odit minus ea cupiditate iste maiores exercitationem.</div>
+    </div>
+    <h1>Trečias pavyzdys</h1>
+    <div class="margin flex direction">
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga asperiores fugiat eos? Minima similique quos fuga, tempore mollitia quasi molestiae, iure animi odio veritatis sapiente ducimus alias qui suscipit pariatur. Debitis, ab? Neque consequatur ex corrupti accusamus libero ad minus iure? Architecto illum deserunt cupiditate, assumenda aliquid in iste dignissimos asperiores repellendus id nisi doloremque similique ipsa odio ab culpa sed harum praesentium. Architecto alias, perferendis facilis beatae nihil ut, iusto quisquam officiis quod amet reprehenderit corporis eveniet voluptatem sed quam. Quidem velit perspiciatis minima, repellat maiores est, eveniet id autem impedit, qui veritatis. Quaerat excepturi explicabo rerum amet fugiat!</div>
+        <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, culpa!</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis architecto explicabo doloremque nesciunt tempora vel obcaecati autem eveniet eius ex incidunt quod, consequuntur odit minus ea cupiditate iste maiores exercitationem.</div>
+    </div>
+    <h1>Ketvirtas pavyzdys</h1>
+    <div class="margin flex">
+        <div class="digitBox" style="order: 3">1</div>
+        <div class="digitBox" style="order: 4">2</div>
+        <div class="digitBox" style="order: 1">3</div>
+        <div class="digitBox" style="order: 2">4</div>
+    </div>
+    <h1>Penktas pavyzdys</h1>
+    <div class="margin flex justify-content">
+        <div class="digitBox">1</div>
+        <div class="digitBox">2</div>
+        <div class="digitBox">3</div>
+        <div class="digitBox">4</div>
+    </div>
+</body>
+</html>
