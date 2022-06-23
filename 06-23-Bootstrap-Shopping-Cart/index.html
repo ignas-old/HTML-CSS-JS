@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+        .table-cell-padding th,
+        .table-cell-padding td {
+            padding: 1.5rem;
+        }
+
+        .w-70 {
+            width: 70%;
+        }
+
+        .w-9 {
+            width: 9%;
+        }
+
+        .img-height {
+            height: 3rem
+        }
+
+        .fs-7 {
+            font-size: 0.75rem;
+        }
+
+        .dot {
+            height: 1em;
+            width: 1em;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .btn-grey {
+            --bs-btn-color: #000;
+            --bs-btn-bg: #e8e8ea;
+            --bs-btn-border-color: #e8e8ea;
+            --bs-btn-hover-color: #000;
+            --bs-btn-hover-bg: #e8e8ea;
+            --bs-btn-hover-border-color: #e8e8ea;
+            --bs-btn-focus-shadow-rgb: 211,212,213;
+            --bs-btn-active-color: #000;
+            --bs-btn-active-bg: #e8e8ea;
+            --bs-btn-active-border-color: #e8e8ea;
+            --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+            --bs-btn-disabled-color: #000;
+            --bs-btn-disabled-bg: #e8e8ea;
+            --bs-btn-disabled-border-color: #e8e8ea;
+        }
+
+        /* Removing input arrows */
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container rounded border p-0 my-4 bg-white">
+        <div class="p-4 border-bottom rounded-top bg-light">
+            <h2 class="m-0 p-0">Shopping Cart</h2>
+        </div>
+        <form action="" class="p-4">
+            <table class="table table-bordered table-cell-padding align-middle">
+                <thead>
+                    <tr>
+                        <th scope="col" class="text-center w-70">
+                            Product Name & Details
+                        </th>
+                        <th scope="col" class="text-end w-9">
+                            Price
+                        </th>
+                        <th scope="col" class="text-center w-9">
+                            Quantity
+                        </th>
+                        <th scope="col" class="text-end w-9">
+                            Total
+                        </th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="d-flex">
+                            <img src="images/product-1.png" alt="Product 2" class="img-height pe-4">
+                            <div class="w-100 flex-grow-1">
+                                <p class="mb-1">Product 1</p>
+                                <p class="m-0 fs-7">
+                                    <span class="text-muted inline-block">Color: </span>
+                                    <span class="dot bg-danger"></span>
+                                    <span class="text-muted inline-block ms-2">Size: </span>
+                                    <span>EU 37</span>
+                                    <span class="text-muted inline-block ms-2">Ships from: </span>
+                                    <span>China</span>
+                                </p>
+                            </div>
+                        </td>
+                        <td class="text-end">$57.55</td>
+                        <td><input type="number" min="1" max="100" class="form-control text-center" value="2"></td>
+                        <td class="text-end">$115.1</td>
+                        <td class="text-center px-0">
+                            <a href="#" class="text-danger fs-4 text-decoration-none">×</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="d-flex">
+                            <img src="images/product-2.png" alt="Product 2" class="img-height pe-4">
+                            <div class="w-100 flex-grow-1">
+                                <p class="mb-1">Product 2</p>
+                                <p class="m-0 fs-7">
+                                    <span class="text-muted inline-block">Color: </span>
+                                    <span class="dot bg-dark"></span>
+                                    <span class="text-muted inline-block ms-2">Storage: </span>
+                                    <span>32GB</span>
+                                    <span class="text-muted inline-block ms-2">Warranty: </span>
+                                    <span>Standard 1 - year</span>
+                                    <span class="text-muted inline-block ms-2">Ships from: </span>
+                                    <span>China</span>
+                                </p>
+                            </div>
+                        </td>
+                        <td class="text-end">$1049.00</td>
+                        <td><input type="number" min="1" max="100" class="form-control text-center" value="1"></td>
+                        <td class="text-end">$1049.00</td>
+                        <td class="text-center px-0">
+                            <a href="#" class="text-danger fs-4 text-decoration-none">×</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="d-flex">
+                            <img src="images/product-3.png" alt="Product 2" class="img-height pe-4">
+                            <div class="w-100 flex-grow-1">
+                                <p class="mb-1">Product 3</p>
+                                <p class="m-0 fs-7">
+                                    <span class="text-muted inline-block">Ships from: </span>
+                                    <span>Germany</span>
+                                </p>
+                            </div>
+                        </td>
+                        <td class="text-end">$20.55</td>
+                        <td><input type="number" min="1" max="100" class="form-control text-center" value="1"></td>
+                        <td class="text-end">$20.55</td>
+                        <td class="text-center px-0">
+                            <a href="#" class="text-danger fs-4 text-decoration-none">×</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="d-flex align-items-center">
+                <div class="col-3 g-0">
+                    <p class="text-muted p-0">Promocode</p>
+                    <input type="text" name="" id="" class="form-control" placeholder="ABC">    
+                </div>
+                <div class="col-1 text-end ms-auto">
+                    <div class="text-muted">Discount</div>
+                    <div class="fw-bold">$20</div>
+                </div>
+                <div class="col-1 text-end">
+                    <div class="text-muted">Total price</div>
+                    <div class="fw-bold">$1164.65</div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-end mt-4">
+                <button type="button" class="btn btn-grey py-2 px-3 me-4 fs-5">Back to shopping</button>
+                <button type="button" class="btn btn-primary py-2 px-3 fs-5">Checkout</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+<!-- 
+<div class="row p-0 m-0">
+    <div class="col-7 border p-3">
+        <h5 class="m-0 p-0 text-center">Product Name & Details</h5>
+    </div>
+    <div class="col-2 border-top border-end p-3">
+        <h5 class="m-0 p-0 text-end">Price</h5>
+    </div>
+    <div class="col-2 border-top border-right"></div>
+    <div class="col-2 border-top border-right"></div>
+</div>
+<div class="row p-0 m-0"></div>
+-->
