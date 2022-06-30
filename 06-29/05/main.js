@@ -22,6 +22,12 @@ while (P_points <= limit || K_points <= limit) {
     else if (P_current < K_current)
         document.write('<p>Partiją laimėjo Kazys</p>')
     else
-        document.write('<p>Partija baigėsi lygiosiomis</p>')
+        document.write('<p>Partiją baigėsi lygiosiomis</p>')
 
+}
+
+if (P_points > K_points) {
+    document.write('<h1>Žaidimą laimėjo Petras</h1>')
+} else {
+    document.write('<h1>Žaidimą laimėjo Kazys</h1>')
 }
