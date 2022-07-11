@@ -61,3 +61,4 @@ for (let i = 1; i < new_array.length; i++) {
 console.log(new_array)
 
 // e)
+
