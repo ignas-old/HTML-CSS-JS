@@ -19,21 +19,9 @@ document.write(function_1('Hello world!', 3))
 
 // 3
 
-const function_2 = () => {
-    
-    const str = btoa(Date.now()).replaceAll('=', '');
+const str = btoa(Date.now()).match(/[A-Z\s]+/g);
 
-
-
-    for (const element of str) {
-        if (element === element.toUpperCase()) {
-            console.log(element)
-        }
-    }
-
-}
-
-// function_2();
+console.log(str);
 
 //4
 

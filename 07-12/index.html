@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Stopwatch</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        .timer {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            margin: 0 auto;
+            width: 200px;
+            background: #5c5c5c;
+            font-weight: 600;
+            justify-content: center;
+            color: #FFF;
+            font-size: 40px;
+            gap: 3px;
+        }
+
+        .timer > span {
+            margin-right: 10px;
+        }
+
+        #buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            gap: 20px
+        }
+    </style>
+</head>
+<body>
+    <div id="timer" class="timer">
+        <strong data-timebase="seconds"></strong>
+        <span>s</span>
+        <strong data-timebase="miliseconds"></strong>
+    </div>
+    <div id="buttons">
+        <button onclick="start_stop()" class="start-stop">Start</button>
+        <button onclick="reset()" class="reset">Reset</button>
+    </div>
+    <script>
+        const timer = document.querySelector('#timer')
+        const secondsElement = timer.querySelector('strong[data-timebase="seconds"]')
+        const milisecondsElement = timer.querySelector('strong[data-timebase="miliseconds"]')
+        const buttons = document.querySelector('#buttons')
+        const start_stop_button = buttons.querySelector('.start-stop')
+        const reset_button = buttons.querySelector('.reset')
+        let seconds = 0
+        let miliseconds = 0
+        let running = false
+        let run
+
+        console.log(start_stop_button)
+
+        const refresh_stopwatch = () => {
+            secondsElement.textContent = seconds
+            milisecondsElement.textContent = miliseconds < 10 ? '0' + miliseconds : miliseconds
+        }
+
+        const start_stop = () => {
+            if(running) {
+
+                stop()
+                running = false
+
+            } else {
+
+                start()
+                running = true
+
+            }
+        }
+        
+        const start = () => {
+
+            run = setInterval(() => {
+                //seconds +=
+                miliseconds++
+
+                if(miliseconds > 99) {
+                    seconds++
+                    miliseconds = 0
+                }
+                    
+                refresh_stopwatch()
+            }, 10) 
+
+            start_stop_button.innerHTML = 'Stop'
+
+        }
+
+        const stop = () => {
+            clearInterval(run)
+
+            start_stop_button.innerHTML = 'Start'
+
+        }
+
+        const reset = () => {
+
+            miliseconds = 0
+            seconds = 0
+
+            refresh_stopwatch()
+            stop()
+
+            running = false
+        }
+
+        refresh_stopwatch()
+    </script>
+</body>
+</html>

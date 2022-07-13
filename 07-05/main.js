@@ -46,36 +46,34 @@ const length = 100;
 const array_1 = create_array_w_unique_values(length, 100, 999);
 const array_2 = create_array_w_unique_values(length, 100, 999);
 
-console.log(array_1);
-console.log(array_2);
+// console.log(array_1);
+// console.log(array_2);
 
 // 2.
 
-const array_3 = array_1.filter((element) => {
-    if(!array_2.includes(element))
-        return element
-})
+const array_3 = array_1.filter(element => !array_2.includes(element))
 
-console.log(array_3)
+// console.log(array_3)
 
 // 3.
 
-const array_4 = array_1.filter((element) => {
-    if(array_2.includes(element))
-        return element
-})
+const array_4 = array_1.filter(element => array_2.includes(element))
 
-console.log(array_4)
+// console.log(array_4)
 
 // 4.
 
-let j = 0;
 let array_5 = [];
 
-for (const i of array_1) {
-    array_5[i] = array_2[j]
-    j++;
+for (const index in array_1) {
+    array_5[array_1[index]] = array_2[index]
 }
+
+// array_5.forEach(element => console.log(element))
+
+// for (const value of array_5) {
+//     console.log(value);
+// }
 
 console.log(array_5)
 
@@ -83,10 +81,11 @@ console.log(array_5)
 
 let array_6 = [];
 
-array_6[0] = getRand(5, 25);
-array_6[1] = getRand(5, 25);
+for(let i = 0; i < 2; i++) {
+    array_6[i] = getRand(5, 25);
+}
 
-for (let i = 2; i < 10; i++) {
+for (let i = array_6.length; i < 10; i++) {
     array_6[i] = array_6[i-1] + array_6[i-2];
 }
 
@@ -97,7 +96,7 @@ console.log(array_6)
 const rows = 10;
 const cols = 5;
 
-let array_7 = [];
+const array_7 = [];
 
 for (let i = 0; i < rows; i++) {
     array_7[i] = [];
