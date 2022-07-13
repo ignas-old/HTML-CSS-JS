@@ -23,20 +23,27 @@ const animation = (step = 50, array = span_text) => {
 
     console.log(current_values);
 
-    for(let max_location=50; max_location < Math.max(...max_values); max_location += step) {
 
-        for (let i = 0; i < array.length; i++) {
+    const intervals = []
 
-            if (current_values[i] < max_values[i]) {
-                setTimeout(() => {
+    for (let i = 0; i < array.length; i++) {
+
+            intervals[i] = setInterval(() => {
+
+                if (current_values[i] < max_values[i]) {
 
                     current_values[i] += step;
                     array[i].innerText = current_values[i];
-        
-                }, step)
-            }
-        }
+
+                } else {
+                    clearInterval(intervals[i]);
+                }
+
+
+    
+            }, step)
     }
+
 
 }
 
