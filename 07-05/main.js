@@ -152,9 +152,7 @@ const find_col_sum = () => {
 
     array_7[0].forEach((element, index) => col_sum[index] = 0);
 
-    array_7.forEach(element => element.forEach((element_2, index) => {
-        return col_sum[index] += element_2;
-    }))
+    array_7.forEach(element => element.forEach((element_2, index) => col_sum[index] += element_2))
 
     return col_sum;
 
@@ -173,6 +171,7 @@ const add_elements_to_array = (added_length = 2) => {
 
 add_elements_to_array();
 
+console.log('d)')
 console.log(array_7);
 
 // e)
@@ -183,7 +182,7 @@ const sum_of_rows = () => {
 
         let sum = 0;
         
-        element.map((element_2) => {
+        element.map(element_2 => {
             sum += element_2;
         })
 
@@ -195,3 +194,4 @@ const sum_of_rows = () => {
 }
 
 console.log(sum_of_rows());
+

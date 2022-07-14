@@ -42,19 +42,6 @@
         <button onclick="reset()" class="reset">Reset</button>
     </div>
     <script>
-        const timer = document.querySelector('#timer')
-        const secondsElement = timer.querySelector('strong[data-timebase="seconds"]')
-        const milisecondsElement = timer.querySelector('strong[data-timebase="miliseconds"]')
-        const buttons = document.querySelector('#buttons')
-        const start_stop_button = buttons.querySelector('.start-stop')
-        const reset_button = buttons.querySelector('.reset')
-        let seconds = 0
-        let miliseconds = 0
-        let running = false
-        let run
-
-        console.log(start_stop_button)
-
         const refresh_stopwatch = () => {
             secondsElement.textContent = seconds
             milisecondsElement.textContent = miliseconds < 10 ? '0' + miliseconds : miliseconds
@@ -109,6 +96,19 @@
 
             running = false
         }
+
+        const timer = document.querySelector('#timer')
+        const secondsElement = timer.querySelector('strong[data-timebase="seconds"]')
+        const milisecondsElement = timer.querySelector('strong[data-timebase="miliseconds"]')
+        const buttons = document.querySelector('#buttons')
+        const start_stop_button = buttons.querySelector('.start-stop')
+        const reset_button = buttons.querySelector('.reset')
+        let seconds = 0
+        let miliseconds = 0
+        let running = false
+        let run
+
+        console.log(start_stop_button)
 
         refresh_stopwatch()
     </script>

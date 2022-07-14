@@ -21,7 +21,9 @@ document.write(function_1('Hello world!', 3))
 
 const str = btoa(Date.now()).match(/[A-Z\s]+/g);
 
-console.log(str);
+for (const element of str) {
+    document.write(function_1(element, 3))
+}
 
 //4
 
@@ -33,7 +35,7 @@ const function_4 = (number) => {
 
     let divisors = 0;
 
-    for(let i = 2; i < number-1; i++) {
+    for(let i = 2; i <= (number/2); i++) {
         if(number%i == 0)
             divisors++;
     }
@@ -47,11 +49,13 @@ let array = [];
 
 for (let i = 0; i < 100; i++) {
 
-    array[i] = getRand(33, 77);
+    array[i] = getRand(66, 77);
 
 }
 
-array.sort((a, b) => function_4(b) - function_4(a));
+array.sort((a, b) => (function_4(b) - function_4(a) || b - a));
+
+console.log(array[0]);
 
 console.log(array);
 
@@ -63,7 +67,7 @@ for (let i = 0; i < 100; i++) {
 
 }
 
-array = array.map((element, index, array_inner) => {
+array = array.map((element) => {
     if (function_4(element) !== 0)
         return element
 })
@@ -73,4 +77,4 @@ for(let i = array.length - 1; i>=0; i--) {
         array.splice(i, 1);
 }
 
-console.log(array);
+// console.log(array);
