@@ -18,7 +18,6 @@ h1, h2, h3, h4, h5 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     line-height: 1.21;
-    color: initial;
 }
 
 h1 {
@@ -139,13 +138,11 @@ header {
     text-transform: uppercase;
     font-weight: 300;
     margin: 0;
-    color: white;
 }
 
 .introText h2 {
     font-size: 42px;
     margin: 0 0 15px;
-    color: white;
 }
 
 .introText p {
@@ -285,7 +282,7 @@ header {
     transition: all .2s ease-in-out;
 }
 
-.card-body:hover, .card-body:hover .card-text {
+.card-body:hover, .card-body:hover .card-text, .card-body:hover span {
     color: #fff;
 }
 
@@ -328,4 +325,118 @@ header {
 
 .about-us li {
     padding: 0.5rem 0;
+}
+
+.video {
+    background: url('../images/video-bg.jpg') no-repeat center center / cover;
+    position: relative;
+}
+
+.video::before {
+    content: "";
+    position: absolute; 
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, rgba(32, 40, 119, 0.95), rgba(55, 46, 149, 0.95), rgba(83, 49, 177, 0.90), rgba(114, 48, 205, 0.85), rgba(150, 41, 230, 0.95));
+}
+
+.video .container {
+    padding: 6rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button-google-play {
+    background: white;
+    color: rgb(57, 51, 173);
+    font-weight: 700;
+    display: inline-block;
+    padding: 12px 30px;
+    margin: 0 15px 0 0;
+    border: 1px solid white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: all 0.2s ease-in-out;
+}
+
+.button-luminating {
+    border-radius: 50%;
+    display: block;
+    -webkit-animation: ripple-white 1s linear infinite;
+    -webkit-transition: .5s;
+    text-decoration: none;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 4;
+    display: inline-block;
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-luminating span {
+    
+    color: rgb(57, 51, 173);
+}
+
+.video .buttons {
+    margin-top: 45px;
+}
+
+.video .button {
+    padding: 12px 30px;
+}
+
+.button-google-play:hover {
+    background: none;
+    color: #fff;
+}
+
+.video h5 {
+    color: #fff;
+    margin: 22.5px 0 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18.75px;
+    font-weight: 600;
+    line-height: 1.21;
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    z-index: 200;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#overlay div {
+    display: flex;
+    flex-direction: column;
+}
+
+.close {
+    border: none;
+    background: none;
+    margin: 0 0 0 auto;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 24px;
+}
+
+.close:hover {
+    color: #fff;
 }

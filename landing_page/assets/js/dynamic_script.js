@@ -1,4 +1,4 @@
-const span_text = document.querySelectorAll('span');
+const span_text = document.querySelectorAll('.row span');
 
 console.log(span_text)
 
