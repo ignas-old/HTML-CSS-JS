@@ -36,6 +36,9 @@ const round_initialization = () => {
         <div id="round-countdown">Pasiruoškite</div>
     </div>`;
 
+    cpu.roundPoints = 0;
+    human.roundPoints = 0;
+
     const countdown = document.getElementById('round-countdown');
     countdown.style.fontSize = '5rem';
 
@@ -119,7 +122,7 @@ const start_round = () => {
 
 const end_round = () => {
 
-    root.innerHTML = '';
+    let message;
 
     if(human.roundPoints > cpu.roundPoints) {
         human.wonRounds++;
@@ -132,6 +135,8 @@ const end_round = () => {
 
         }
     }
+
+    root.innerHTML = '';
 
 }
 
