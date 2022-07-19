@@ -122,6 +122,8 @@ const start_round = () => {
 
 const end_round = () => {
 
+    root.innerHTML = '';
+
     let message;
 
     if(human.roundPoints > cpu.roundPoints) {
@@ -131,12 +133,14 @@ const end_round = () => {
     }
 
     if(human.wonRounds === 10 || cpu.wonRounds === 10) {
-        if(human.wonRounds > cpu.wonRounds) {
-
-        }
+        if(human.wonRounds > cpu.wonRounds)
+            message = 'Sveikinu su pergale.'
+        else
+            message = 'Sekmės kitą kart.'
+        
+        
     }
 
-    root.innerHTML = '';
 
 }
 
