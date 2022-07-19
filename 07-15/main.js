@@ -58,13 +58,14 @@ const start_round = () => {
 
     const round_step = () => {
 
-        cpu.roundPoints++;
-        generate_position();
-        square.style.backgroundColor = generate_color_code();
-        countdown.innerHTML = round_length;
-        if (round_length>1) {
+        
+        if (round_length>0) {
             new_round = true;
+            generate_position();
+            square.style.backgroundColor = generate_color_code();
+            countdown.innerHTML = round_length;
             round_length--;
+            cpu.roundPoints++;
 
         }
             
@@ -72,10 +73,6 @@ const start_round = () => {
             clearInterval(round_process);
             end_round();
         }
-
-        console.log('step ', cpu.roundPoints, human.roundPoints);
-        
-        
         
     }
 
@@ -102,9 +99,6 @@ const start_round = () => {
     square.style.width = `${square_size}px`;
     square.style.height = `${square_size}px`;
 
-    square.style.backgroundColor = generate_color_code();
-    generate_position();
-
     square.addEventListener('click', () => {
         if (new_round){
             cpu.roundPoints--;
@@ -113,6 +107,8 @@ const start_round = () => {
             console.log('click');
         }
     });
+
+    round_step();
 
     const round_process = setInterval(round_step, 1000)
 
@@ -164,7 +160,7 @@ const end_round = () => {
     update_values();
     document.getElementById('round-result').innerHTML = round_end_message;
 
-    if(human.wonRounds >= rounds || cpu.wonRounds >= rounds) {
+    if(human.wonRounds + cpu.wonRounds >= rounds) {
         if(human.wonRounds > cpu.wonRounds)
             game_end_message += human.title; 
         else
