@@ -10,10 +10,10 @@ const html_to_add = `<div id="overlay">
 </div>`;
 
 const show_video = () => {
-    root.innerHTML += (html_to_add)
+    root.innerHTML += html_to_add
     console.log("button pushed")
     root = document.getElementById('root');
-    const close = root.querySelector('.close');
+    const close = document.querySelector('.close');
     close.addEventListener('click', close_video);
 }
 
@@ -22,8 +22,7 @@ const close_video = () => {
     const overlay = root.querySelector('#overlay');
     console.log(overlay);
     const throwaway = root.removeChild(overlay);
+    button.addEventListener('click', show_video);
 }
-
-console.log("script loaded");
 
 button.addEventListener('click', show_video);
