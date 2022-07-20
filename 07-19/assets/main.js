@@ -21,8 +21,17 @@ const onSubmit = (event) => {
 
 // Regex expression for email validation /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 
-// Regex for /^[a-zA-Z]+$/
+// Regex for word /^[a-zA-Z]+$/
+const presubmissionCheck = () => {
+    const firstName = form.querySelector('#inputName');
+    const surname = form.querySelector('#inputSurname');
+    const email = form.querySelector('#inputEmail');
+    const message = form.querySelector('#inputMessage');
 
+    console.log(firstName, surname, email, message)
+
+
+}
 
 window.addEventListener('keydown', event => {
 
@@ -31,9 +40,9 @@ window.addEventListener('keydown', event => {
 
     if (event && event.code == 'Enter') {
 
+        presubmissionCheck();
 
-
-        form.submit();
+        // form.submit();
         isSubmitted = true;
     }
 

@@ -9,24 +9,39 @@
 </head>
 <body class="bg-light">
     <div class="container">
-        <div class="invisible mt-5 p-3" id="submitMessage">Test</div>
+        <h2 class="d-block invalid-feedback invisible mt-5 p-3" id="submitMessage">Test</h2>
         <form action="" class="p-3 border rounded-1 shadow" id="form" onsubmit="return onSubmit()">
-            <div class="d-flex justify-content-between">
-                <label for="inputName" class="form-label col me-4">Vardas</label>
-                <label for="inputName" class="form-label col">Pavardė</label>
+            <div class="d-flex">
+                <div class="me-2 flex-grow-1">
+                    <label for="inputName" class="form-label">Vardas</label>
+                    <input type="text" name="" id="inputName" class="form-control">
+                    <div class="invalid-feedback d-block invisible">
+                        Įveskite savo vardą.
+                    </div>
+                </div>
+                <div class="ms-2 flex-grow-1">
+                    <label for="inputName" class="form-label">Pavardė</label>
+                    <input type="text" name="" id="inputSurname" class="form-control">
+                    <div class="invalid-feedback d-block invisible">
+                        Įveskite savo pavardę.
+                    </div>
+                </div>
             </div>
-            <div class="d-flex justify-content-between">
-                <input type="text" name="" id="inputName" class="form-control col me-4">
-                <input type="text" name="" id="inputSurname" class="form-control col">
-            </div>
-            <div class="mt-2">
+            <div class="mt-1">
                 <label for="inputEmail" class="form-label">El. pašto adresas</label>
                 <input type="text" name="" id="inputEmail" class="form-control">
+                <div class="invalid-feedback d-block invisible">
+                    Įveskite el. pašto adresą.
+                </div>
             </div>
-            <div class="form-floating mt-4">
+            <div class="form-floating mt-2 mb-2">
                 <textarea class="form-control" placeholder="Leave a comment here" id="inputMessage" style="height: 200px; resize: none;"></textarea>
                 <label for="inputMessage">Žinutė</label>
+                <div class="invalid-feedback d-block invisible">
+                    Įveskite žinutę.
+                </div>
             </div>
+            <button type="submit" class="btn btn-primary">Siųsti žinutę</button>
         </form>
     </div>
     <script src="assets/main.js"></script>
