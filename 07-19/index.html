@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body class="bg-light">
+    <div class="container">
+        <div class="invisible mt-5 p-3" id="submitMessage">Test</div>
+        <form action="" class="p-3 border rounded-1 shadow" id="form" onsubmit="return onSubmit()">
+            <div class="d-flex justify-content-between">
+                <label for="inputName" class="form-label col me-4">Vardas</label>
+                <label for="inputName" class="form-label col">Pavardė</label>
+            </div>
+            <div class="d-flex justify-content-between">
+                <input type="text" name="" id="inputName" class="form-control col me-4">
+                <input type="text" name="" id="inputSurname" class="form-control col">
+            </div>
+            <div class="mt-2">
+                <label for="inputEmail" class="form-label">El. pašto adresas</label>
+                <input type="text" name="" id="inputEmail" class="form-control">
+            </div>
+            <div class="form-floating mt-4">
+                <textarea class="form-control" placeholder="Leave a comment here" id="inputMessage" style="height: 200px; resize: none;"></textarea>
+                <label for="inputMessage">Žinutė</label>
+            </div>
+        </form>
+    </div>
+    <script src="assets/main.js"></script>
+</body>
+</html>
