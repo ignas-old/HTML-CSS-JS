@@ -1,50 +1,56 @@
 const form = document.getElementById('form');
+const firstName = form.querySelector('#inputName');
+const surname = form.querySelector('#inputSurname');
+const email = form.querySelector('#inputEmail');
+const message = form.querySelector('#inputMessage');
+const submitMessage = document.getElementById('submitMessage');
+
+let isValid = true;
 
 form.addEventListener('submit', event => {
     event.preventDefault();
-    console.log('Submited');
+
+    validate();
+
+    if (!isValid) {
+        submitMessage.innerHTML = 'Įveskite teisingus duomenis'
+        submitMessage.classList.remove('invisible');
+        submitMessage.classList.add('invalid-feedback');
+        isValid = true;
+    } else {
+        submitMessage.innerHTML = 'Netrukus su jumis susisieksime'
+        submitMessage.classList.remove('invisible');
+        submitMessage.classList.remove('invalid-feedback');
+    }
+
+    console.log(isValid);
+    console.log(message.value);
 });
 
-let isSubmitted = false;
+const validate = () => {
+    check(firstName, /^[a-zA-Z]+$/);
+    check(surname, /^[a-zA-Z]+$/);
+    check(email, /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
+    check(message, /(.|\s)*\S(.|\s)*/);
+}
 
-const onSubmit = (event) => {
-    event.preventDefault();
+const check = (node, regex) => {
+    if (!node)
+        return
 
-    if (isSumbitted) {
-        /*
-        * 3) reset to false after the form submission executed
-        */
-        isSubmitted = false;
-        return false;
+    const feedback = node.parentElement.querySelector('.invalid-feedback');
+    
+    if (!regex.test(node.value)) {
+        node.classList.add('is-invalid');
+        feedback.classList.remove('invisible');
+        isValid = false;
+    } else {
+        node.classList.remove('is-invalid');
+        feedback.classList.add('invisible');
     }
 }
 
 // Regex expression for email validation /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 
 // Regex for word /^[a-zA-Z]+$/
-const presubmissionCheck = () => {
-    const firstName = form.querySelector('#inputName');
-    const surname = form.querySelector('#inputSurname');
-    const email = form.querySelector('#inputEmail');
-    const message = form.querySelector('#inputMessage');
 
-    console.log(firstName, surname, email, message)
-
-
-}
-
-window.addEventListener('keydown', event => {
-
-    console.log(event)
-    event.preventDefault();
-
-    if (event && event.code == 'Enter') {
-
-        presubmissionCheck();
-
-        // form.submit();
-        isSubmitted = true;
-    }
-
-    
-})

@@ -9,29 +9,29 @@
 </head>
 <body class="bg-light">
     <div class="container">
-        <h2 class="d-block invalid-feedback invisible mt-5 p-3" id="submitMessage">Test</h2>
-        <form action="" class="p-3 border rounded-1 shadow" id="form" onsubmit="return onSubmit()">
+        <div class="d-block invalid-feedback invisible mt-5 p-2 fs-3" id="submitMessage">Įveskite teisingus duomenis</div>
+        <form action="" class="p-3 border rounded-1 shadow" id="form" onsubmit="">
             <div class="d-flex">
                 <div class="me-2 flex-grow-1">
                     <label for="inputName" class="form-label">Vardas</label>
                     <input type="text" name="" id="inputName" class="form-control">
                     <div class="invalid-feedback d-block invisible">
-                        Įveskite savo vardą.
+                        Prašome įvesti savo vardą.
                     </div>
                 </div>
                 <div class="ms-2 flex-grow-1">
                     <label for="inputName" class="form-label">Pavardė</label>
                     <input type="text" name="" id="inputSurname" class="form-control">
                     <div class="invalid-feedback d-block invisible">
-                        Įveskite savo pavardę.
+                        Prašome įvesti savo pavardę.
                     </div>
                 </div>
             </div>
             <div class="mt-1">
                 <label for="inputEmail" class="form-label">El. pašto adresas</label>
-                <input type="text" name="" id="inputEmail" class="form-control">
+                <input type="text" name="" id="inputEmail" class="form-control" placeholder="pavyzdys@email.com">
                 <div class="invalid-feedback d-block invisible">
-                    Įveskite el. pašto adresą.
+                    Prašome įvesti el. pašto adresą atitinkantį pavyzdžio formatą.
                 </div>
             </div>
             <div class="form-floating mt-2 mb-2">
