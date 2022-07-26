@@ -22,7 +22,7 @@ const updateUserData = (user) => {
     document.querySelector('[data-label="name"]').setAttribute('data-value', user.name.first + ' ' + user.name.last);
     document.querySelector('[data-label="email"]').setAttribute('data-value', user.email);
 
-    const dob = new Date(user.dob.date)
+    const dob = new Date(user.dob.date);
     const date = dob.getDay() + '/' + dob.getMonth() + '/' + dob.getFullYear();
 
     document.querySelector('[data-label="birthday"]').setAttribute('data-value', date);
