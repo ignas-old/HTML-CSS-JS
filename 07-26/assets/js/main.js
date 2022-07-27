@@ -52,6 +52,13 @@ const updateUserDetails = () => {
 
     userTitle.innerHTML = active.getAttribute('data-title');
     userValue.innerHTML = active.getAttribute('data-value');
+
+    console.log(active.getAttribute('data-caps'));
+
+    if (active.getAttribute('data-caps') === 'false')
+        userValue.style.textTransform = 'lowercase';
+    else
+        userValue.style.textTransform = 'capitalize';
 }
 
 const updateActiveField = (event) => {
