@@ -53,12 +53,12 @@ const deleteRow = (event) => {
 const createRow = (id) => {
 
     const html = `<tr id=row-${id}>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td class="c-1"></td>
+        <td class="c-2"></td>
+        <td class="c-3"></td>
+        <td class="c-4"></td>
+        <td class="c-5"></td>
+        <td class="c-6"></td>
         <td class="p-0"><button type="button" class="btn btn-danger">Ištrinti</button></td>
     </tr>`;
 
@@ -66,9 +66,7 @@ const createRow = (id) => {
 
 }
 
-const fillUserData = async (user, id) => {
-    user = await user;
-
+const fillUserData = (user, id) => {
     const data = [];
 
     data[0] = user.name.first + ' ' + user.name.last;
@@ -81,13 +79,8 @@ const fillUserData = async (user, id) => {
     data[4] = formatPhoneNumber(user.cell);
     data[5] = user.login.password;
 
-    const row = document.querySelector(`#row-${id}`);
-
-    console.log(row);
-
-
     for (i in data) {
-        row.querySelector(`:nth-child(${i+1})`).innerHTML = data[i];
+        document.querySelector(`#row-${id} tr.c-${i+1}`).innerHTML = data[i];
     }
 }
 
@@ -97,7 +90,7 @@ const generateNewUserAndFill = async (id) => {
     fillUserData(await user, id);
 }
 
-const generateTable = (userAmount = 50) => {
+const generateTable = (userAmount = 5) => {
     createTable();
 
     for (let id=0; id<userAmount; id++) {

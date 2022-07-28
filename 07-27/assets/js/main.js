@@ -1,47 +1,16 @@
-const updateUserDetails = () => {
-    const active = document.querySelector('.active');
-
-    userTitle.innerHTML = active.getAttribute('data-title');
-    userValue.innerHTML = active.getAttribute('data-value');
-
-    console.log(active.getAttribute('data-caps'));
-
-    if (active.getAttribute('data-caps') === 'false')
-        userValue.style.textTransform = 'lowercase';
-    else
-        userValue.style.textTransform = 'capitalize';
-}
-
-const updateActiveField = (event) => {
-    const toggledClass = 'active';
-    const target = event.target;
-
-    for (listItem of listItems) {
-        listItem.classList.remove(toggledClass);
-    }
-
-    event.target.classList.add(toggledClass);
-
-    updateUserDetails();
-}
-
 const getData = async (url) => {
     try {
         const resp = await fetch(url);
         return await resp.json();
     } catch {
-        return false;
+        getData();
     }
 }
 
 const generateNewUser = async () => {
     const resp = await getData('https://randomuser.me/api/');
 
-    if (!resp)
-        return false;
-    
     return resp.results[0];
-    // updateUserData(user);
 }
 
 const createTable = () => {
@@ -78,8 +47,7 @@ const formatPhoneNumber = (phoneNumberString) => {
 const deleteUserRow = (event) => {
     console.log('veikia');
 
-    // event.target.parentElement.parentElement.remove();
-    
+    event.target.parentElement.parentElement.remove();
 }
 
 const fillUserRow = (user, id) => {
@@ -113,15 +81,10 @@ const fillUserRow = (user, id) => {
     console.log(buttons[id]);
 
     buttons[id].addEventListener('click', deleteUserRow);
-
 }
 
 const generateNewUserAndFill = async (id) => {
-    let user;
-
-    do {
-        user = await generateNewUser();
-    } while (!user)
+    const user = await generateNewUser();
 
     fillUserRow(user, id);
 }
