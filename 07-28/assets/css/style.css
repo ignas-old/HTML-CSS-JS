@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.columns {
+    column-count: 4;
+}
+
+.columns > img {
+    max-width: 100%;
+    margin-bottom: 20px;
+    transition: all 2s ease-out;
+}
