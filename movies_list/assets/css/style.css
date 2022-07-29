@@ -1,3 +1,13 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.grid img {
+    width: 100%;
+}
+
 .bg-grey {
     background-color: #f5f5f5;
 }
