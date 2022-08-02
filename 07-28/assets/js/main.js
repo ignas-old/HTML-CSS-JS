@@ -1,12 +1,14 @@
-const getData = async (url) => {
-    let callAttempts = 0;
+const getData = async (url, callAttempts = 0) => {
 
     try {
         const resp = await fetch(url);
         return resp.json();
-    } catch {
+    }
+    
+    catch {
+        callAttempts++;
         if (callAttempts<10)
-            return setTimeout(getData, 50);
+            return setTimeout(getData(url, callAttempts), 50);
         return false;
     }
 }
@@ -24,9 +26,7 @@ const shuffle = (array) => {
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex--;
 
-      console.log([array[currentIndex], array[randomIndex]]);
       [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-      console.log([array[currentIndex], array[randomIndex]]);
     }
 
     return array;

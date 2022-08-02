@@ -19,7 +19,7 @@ const getMovieList = async (page) => {
 const fillHolder = (movies, element) => {
     for (const movie of movies) {
         element.innerHTML += `<div class="movie-details m-2">
-            <img scr="${movie.Poster}" alt="${movie.Title}">
+            <img src="${movie.Poster}" alt="${movie.Title}">
             <h5>${movie.Title}</h5>
             <div class="mb-1">${movie.Year}</div>
             <div class="text-capitalize text-muted mb-1">${movie.Type}</div>
